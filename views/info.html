@@ -6,5 +6,26 @@
 </head>
 <body>
 
+    <h1>{{ @title}}</h1>
+
+    <p>You are logged in as {{ @username}} with password {{ @password}}</p>
+
+    <h2>Tempratuture</h2>
+    <p>Fah: {{ @temp}}</p>
+    <p>Cel: {{ round((@temp-32) * (5/9), 2)}}</p>
+
+
+    <h2>Fruits</h2>
+    <repeat group="{{ @fruits}}" value="{{ @fruit }}">
+        <p>{{ @fruit}}</p>
+    </repeat>
+
+    <h2>Desserts</h2>
+    <repeat group="{{ @desserts }}" key="{{ @val }}" value="{{ @text }}">
+        <input type="checkbox" value="{{ @val }}">{{ @text }}<br>
+    </repeat>
+
+
+
 </body>
 </html>
